@@ -12,10 +12,7 @@ int main(void)
 	for ( ; i < 26; )
 	{
 		if (alpha + i != 'q' && alpha + i != 'e')
-		{
 			putchar(alpha + i);
-		
-		}
 		i++;
 	}
 	putchar('\n');
