@@ -7,17 +7,17 @@
  */
 int main(void)
 {
-        int alpha = 'a';
+        int i, j, alpha = 'a';
         /* Print all lowercase letters */
-        for (int i = 0; i < 26; i++)
+        for (i = 0; i < 26; i++)
         {
                 putchar(alpha + i);
         }
         /* Print all uppercase letters*/
         alpha = 'A';
-        for (int i = 0; i < 26; i++)
+        for (j = 0; j < 26; j++)
         {
-                putchar(alpha + i);
+                putchar(alpha + j);
         }
         putchar('\n');
 
