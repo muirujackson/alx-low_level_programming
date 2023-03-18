@@ -12,7 +12,7 @@ int main(void)
 	for (i = 0; i < 26; i++)
 	{
 		putchar(alpha + i);
-        }
+	}
 	/* Print all uppercase letters*/
 	alpha = 'A';
 	for (j = 0; j < 26; j++)
@@ -21,5 +21,5 @@ int main(void)
 	}
 	putchar('\n');
 	
-	return 0;
+	return (0);
 }
