@@ -1,11 +1,13 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * reset_to_98(int *n) this function reset value using pointer
- *
+ * reset_to_98 - update pointer value to 98
+ * @n: parameter to be provided
+ * Return: Always 0 (Success)
  */
+
 void reset_to_98(int *n)
 {
-	/* reset the number n to 98 */
 	*n = 98;
 }
