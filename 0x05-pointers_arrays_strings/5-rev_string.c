@@ -7,12 +7,17 @@
  */
 void rev_string(char *s)
 {
-	int n = _strlen(s);
+	int n = 0, i = 0;
+
+	while (s[n] != '\0')
+	{
+		n++;
+	}
 	char *a_copy = s;
 
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
-		*s = *(a_copy + --n);
-		s++;
+		s[i] = *(a_copy + --n);
+		i++;
 	}
 }
