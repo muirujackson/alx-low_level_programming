@@ -13,11 +13,11 @@ void rev_string(char *s)
 	{
 		n++;
 	}
-	char *a_copy = s;
+	char *a_copy[] = s;
 
 	while (s[i] != '\0')
 	{
-		s[i] = *(a_copy + --n);
+		s[i] = a_copy[--n];
 		i++;
 	}
 }
