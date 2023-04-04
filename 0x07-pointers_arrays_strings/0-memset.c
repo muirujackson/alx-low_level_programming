@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _memset - fills memory
  * @s: input pointer to char type
