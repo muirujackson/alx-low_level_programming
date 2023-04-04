@@ -10,6 +10,7 @@ char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int counter;
 
+	/* loop over the memory @n times filling @b in @s */
 	for (counter = 0; counter < n; counter++)
 	{
 		s[counter] = b;
