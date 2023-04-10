@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strcat - Function that concatenates two strings.
  * @dest: Pointer to destination string
