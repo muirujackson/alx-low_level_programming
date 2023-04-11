@@ -1,35 +1,69 @@
-#include <stdlib.h>
-
+#include "main.h"
 /**
- * *_strdup - a function that duplicates a string
- *
- * @str: input string to duplicate
- *
- * Return: NULL if str == NULL
- *         @str
-*/
+ *_strlen - count array
+ *@s: array of elements
+ *Return: 1
+ */
 
-char *_strdup(char *str)
+int _strlen(char *s)
 {
-	int i = 0, l = 0;
-	char *s;
+	unsigned int i;
 
-	if (str == NULL)
-		return (NULL);
-
-	/*calculate size of str*/
-	while (str[l] != '\0')
-		l++;
-
-	s = malloc((l + 1) * sizeof(char));
-	if (s == NULL)
-		return (NULL);
-
-	while (str[i] != '\0')
+	i = 0;
+	while (s[i] != '\0') /*count character of string*/
 	{
-		s[i] = str[i];
 		i++;
 	}
 
-	return (s);
+	return (i);
+}
+
+/**
+ *_strcpy - copy arrays
+ *@src: array of elements
+ *@dest: dest array
+ *Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+/**
+ *_strdup - array for prints a string
+ *@str: array of elements
+ *Return: pointer
+ */
+
+char *_strdup(char *str)
+{
+	char *dst;
+	unsigned int size;
+
+	if (str == 0)
+	{
+		return (NULL);
+	}
+
+	size = _strlen(str) + 1;
+
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
+	{
+		return (NULL);
+	}
+
+	_strcpy(dst, str);
+	return (dst);
 }
