@@ -5,7 +5,7 @@
  * @size: Size of array
  * @c: initializer of char
  *
- * return: Null or pointer
+ * Return: Null or pointer
  */
 char *create_array(unsigned int size, char c)
 {
@@ -14,5 +14,11 @@ char *create_array(unsigned int size, char c)
 	s = (char *) malloc(size * sizeof(c));
 	if (size == 0 || s == NULL)
 		return (NULL);
+	position = 0;
+	while (position < size) /*While for array*/
+	{
+		*(s  + position) = c;
+		position++;
+	}
 	return (s);
 }
