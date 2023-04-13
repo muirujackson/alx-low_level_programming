@@ -1,49 +1,62 @@
-#include <stdlib.h>
-
+#include "main.h"
 /**
- * str_concat - a function that concatenates two strings.
- *
- * @s1: input to string 1
- * @s2: input to string 2
- *
- * Return: NULL on faliure
-*/
+ *_strlen - count arrray
+ *@s: array of elements
+ *Return: i
+ */
 
-char *str_concat(char *s1, char *s2)
+int _strlen(char *s)
 {
-	int a = 0, b = 0;
-	int i, j;
-	char *s;
+	unsigned int i;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	/*find length of str1 & str2*/
-	while (s1[a] != '\0')
-		a++;
-	while (s2[b] != '\0')
-		b++;
-
-	/*+1 for our end of string character*/
-	s = malloc((a * sizeof(char)) + ((b + 1) * sizeof(char)));
-
-	if (s == NULL)
-		return (NULL);
-
-	/*add the first string to array s*/
-	for (i = 0; s1[i] != '\0'; i++)
-		s[i] = s1[i];
-	/*add the second string to array s*/
-	for (j = 0; s2[j] != '\0'; j++)
+	i = 0;
+	while (s[i] != '\0') /*Count character of string*/
 	{
-		s[i] = s2[j];
 		i++;
 	}
 
-	/*null terminate our new string*/
-	s[i] = '\0';
+	return (i);
+}
 
-	return (s);
+/**
+ *str_concat - back a pointer to array
+ *@s1: Array one
+ *@s2: Array two
+ *Return: Always an array dinamic
+ */
+
+char *str_concat(char *s1, char *s2)
+{
+	char *dst;
+	unsigned int i, j, size;
+
+	/*If the array is empty*/
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	/*count size total*/
+	size = (_strlen(s1) + _strlen(s2) + 1);
+
+	/*malloc*/
+	dst = (char *) malloc(size * sizeof(char));
+
+	if (dst == 0)
+	{
+		return (NULL);
+	}
+
+	/*Concatenate arrays*/
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dst + i) = *(s1 + i);
+
+	for (j = 0; *(s2 + j) != '\0'; j++)
+	{
+		*(dst + i) = *(s2 + j);
+		i++;
+	}
+
+	return (dst);
 }
