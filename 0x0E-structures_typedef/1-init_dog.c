@@ -1,3 +1,5 @@
+#include "dog.h"
+
 /**
  * init_dog - function to initialize dog variables
  * @d: where we store dog record
