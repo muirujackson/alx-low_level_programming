@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		}
 
 
-		printf("%d\n", get_op_func(operator)(num1, num2));
+		printf("%d\n", get_op_func(operator)(firstNum, secondNum));
 		return (0);
 	}
 	printf("Error\n");
