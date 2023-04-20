@@ -21,22 +21,23 @@ int main(int argc, char **argv)
 	if (argc == 4)
 	{
 		int (*p)(int, int);
+
 		p = get_op_func(operator);
 		if (p == NULL)
 		{
 			printf("Error\n");
-			exit (99);
+			exit(99);
 		}
 		if ((*operator == '/' && !secondNum) || (*operator == '%' && !secondNum))
 		{
 			printf("Error\n");
-			exit (100);
+			exit(100);
 		}
 
 
-		printf("%d\n", p(firstNum,secondNum));
+		printf("%d\n", p(firstNum, secondNum));
 		return (0);
 	}
 	printf("Error\n");
-	exit (98);
+	exit(98);
 }
