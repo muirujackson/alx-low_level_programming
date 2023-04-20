@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		int (*p)(int, int);
 
 		p = get_op_func(operator);
-		if (p == NULL)
+		if (p == NULL || p[1] != '\0')
 		{
 			printf("Error\n");
 			exit(99);
