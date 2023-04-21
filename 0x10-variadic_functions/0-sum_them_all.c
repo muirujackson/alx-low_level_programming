@@ -9,12 +9,13 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	if (n == 0) 
-		return 0;
+
 	va_list ap;
 	int sum, i;
        	unsigned int j;
 
+	if (n == 0) 
+		return (0);
 	j = 0;
 	sum = 0;
 
