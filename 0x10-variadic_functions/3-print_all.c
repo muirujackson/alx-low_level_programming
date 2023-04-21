@@ -6,7 +6,7 @@
  * @arg: a list of argument pointing
  *      to the character to be printed
  *
- * Return: void
+ * Return: nothing
 */
 
 void print_char(va_list arg)
