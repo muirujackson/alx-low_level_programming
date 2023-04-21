@@ -5,6 +5,7 @@
  * sum_them_all - function that sums the arguments
  * @n: the number of elements
  *
+ * Return: int sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
