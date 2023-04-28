@@ -1,9 +1,9 @@
-#include  "lists.h"
+#include <stdio.h>
 /**
  * first_main - function executed before main
  * Return: no return.
  */
-void first_main(void) __attribute__((constructor))
+void __attribute__((constructor)) first_main()
 {
 	printf("You're beat! and yet, you must allow");
 	printf(",\nI bore my house upon my back!\n");
