@@ -1,5 +1,11 @@
 #include "lists.h"
 
+/**
+ * print_listint - function print values in the node
+ * @h: pointer to heade
+ *
+ * Return: total number of node
+ */
 size_t print_listint(const listint_t *h)
 {
 	size_t totalNodes;
