@@ -1,11 +1,11 @@
 #include "lists.h"
 
 /**
- * elete_nodeint_at_index - function that deletes node at index
+ * delete_nodeint_at_index - function that deletes node at index
  * @head: pointer to head
  * @index: the index to delete node
  *
- * Return: int 
+ * Return: int
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
