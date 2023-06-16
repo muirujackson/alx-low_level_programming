@@ -2,8 +2,8 @@
 
 /**
  * add_dnodeint_end - function add node at the end
- * head: pointer to head
- * n: nodes number
+ * @head: pointer to head
+ * @n: nodes number
  *
  * Return: pointer to new node
  */

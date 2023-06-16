@@ -2,7 +2,7 @@
 
 /**
  * dlistint_len - return len
- * *h: pointer to header
+ * @h: pointer to header
  *
  * Return: size_t
  */

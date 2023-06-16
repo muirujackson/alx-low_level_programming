@@ -2,7 +2,7 @@
 
 /**
  * print_dlistint - function to print nmber of nodes
- * h: Pointer to dlistint_h
+ * @h: Pointer to dlistint_h
  *
  * Return: size_t
  */

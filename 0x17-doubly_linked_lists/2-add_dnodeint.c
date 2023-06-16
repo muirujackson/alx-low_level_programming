@@ -2,8 +2,8 @@
 
 /**
  * add_dnodeint - function to add a node
- * head: a pointer to head
- * n: the new node number
+ * @head: a pointer to head
+ * @n: the new node number
  *
  * Return: a pointer to the added new node
  */
