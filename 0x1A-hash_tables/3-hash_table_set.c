@@ -17,19 +17,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-	if (!ht || !key || *key == '\0' || !value)
-		return (0);
-	
-	for (i = index; ht->array[i]; i++)
-	{
-		if (strcmp(ht->array[i]->key, key) == 0)
-		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = value_copy;
-			return (1);
-		}
-	}
-	
+	if (!ht || !key || *key == '\0')
+		return (0);		
 	new->key = strdup(key);
 	if (!new->key)
 		return (0);
