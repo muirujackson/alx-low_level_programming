@@ -9,6 +9,7 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long index;
+	hash_node_t *tmp;
 
 	printf("{");
 	for (index = 0; index < ht->size; index++)
