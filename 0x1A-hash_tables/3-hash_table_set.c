@@ -10,11 +10,12 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new;
+	hash_node_t *new, *current;
 	unsigned long int index;
 
+	index = key_index((const unsigned char *)key, ht->size);
 	/*  Check if the key already exists */
-	hash_node_t *current = ht->array[index];
+	current = ht->array[index];
 	
 	while (current != NULL)
 	{
@@ -37,7 +38,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strdup(key);
 	new->value = strdup(value);
 	new->next = NULL;
-	index = key_index((const unsigned char *)key, ht->size);
 
 	if (!ht->array[index])
 		ht->array[index] = new;
