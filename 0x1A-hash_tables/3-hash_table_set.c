@@ -28,13 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = new;
 	else
 	{
-		tmp = ht->array[index];
-		while (tmp->next)
-		{
-			tmp = tmp->next;
-		}
-
-		tmp->next = new;
+		new->next = array[index];
+		ht->array[index] = new;
 	}
 
 	return (1);
