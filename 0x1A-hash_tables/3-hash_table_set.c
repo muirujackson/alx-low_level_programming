@@ -13,6 +13,22 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new;
 	unsigned long int index;
 
+	/*  Check if the key already exists */
+	hash_node_t *current = ht->array[index];
+	
+	while (current != NULL)
+	{
+		if (strcmp(current->key, key) == 0)
+		{
+			/* Key already exists, update the value */
+			free(current->value);
+			current->value = strdup(value);
+			return 1;
+		}
+		current = current->next;
+	}
+
+
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
