@@ -1,61 +1,61 @@
 #include "search_algos.h"
 
 /**
- * recursive_search - searches for a value in an array of
- * integers using the Binary search algorithm
+ * print_array - print the array searching
+ * @left: pointer on the left
+ * @right: pointer on the right
+ * @array: array to search
  *
- *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: void
  */
-int recursive_search(int *array, size_t size, int value)
+void print_array(int *array, int left, int right)
 {
-	size_t half = size / 2;
-	size_t i;
+	int i;
 
-	if (array == NULL || size == 0)
-		return (-1);
-
-	printf("Searching in array");
-
-	for (i = 0; i < size; i++)
-		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-
+	printf("Searching in array: ");
+	for (i = left; i <= right; i++)
+	{
+		printf("%d", array[i]);
+		if (i < right)
+			printf(", ");
+	}
 	printf("\n");
-
-	if (half && size % 2 == 0)
-		half--;
-
-	if (value == array[half])
-		return ((int)half);
-
-	if (value < array[half])
-		return (recursive_search(array, half, value));
-
-	half++;
-
-	return (recursive_search(array + half, size - half, value) + half);
 }
-
 /**
- * binary_search - calls to binary_search to return
- * the index of the number
+ * binary_search - search value in a sorted array of integer
+ * @array: a pointer to the first element of the array to search in
+ * @size: the number of elements in array
+ * @value: the value to search for
  *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: The index of the value or -1 when not found
  */
 int binary_search(int *array, size_t size, int value)
 {
-	int index;
+	int left = 0, right = size - 1,  mid;
 
-	index = recursive_search(array, size, value);
-
-	if (index >= 0 && array[index] != value)
+	if (array == NULL || size == 0)
 		return (-1);
+	while (left <= right)
+	{
+		print_array(array, left, right);
+		mid = (left + right) / 2;
 
-	return (index);
+		if (array[mid] <= value)
+			if (array[mid] == value)
+			{
+				left = mid;
+				return (left);
+			}
+			else
+				left = mid + 1;
+		else
+			if (array[mid] == value)
+			{
+				right = mid;
+				return (right);
+			}
+			else
+				right = mid - 1;
+	}
+	return (-1);
 }
